@@ -1,0 +1,946 @@
+[
+  {
+    "id": "gold_001",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1036",
+    "ground_truth_technique_name": "Masquerading",
+    "valid": true,
+    "prediction": {
+      "summary": "Execution of an unknown executable from the Public directory with high integrity level.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a high integrity process (cmd.exe) executing an unknown executable (KeeFarce.exe) from the Public directory. While this is suspicious, there is no clear evidence of malicious intent. The Public directory is commonly used for shared files, and the high integrity level of the parent process (cmd.exe) suggests it is likely a legitimate administrative task. Without additional context or indicators of compromise, this event does not strongly indicate malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"Execution of an unknown executable from the Public directory with high integrity level.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a high integrity process (cmd.exe) executing an unknown executable (KeeFarce.exe) from the Public directory. While this is suspicious, there is no clear evidence of malicious intent. The Public directory is commonly used for shared files, and the high integrity level of the parent process (cmd.exe) suggests it is likely a legitimate administrative task. Without additional context or indicators of compromise, this event does not strongly indicate malicious activity.\"\n}"
+  },
+  {
+    "id": "gold_002",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Sysmon process created a registry key in the Root certificate store.",
+      "severity": "low",
+      "mitre_technique_id": "T1130",
+      "mitre_technique_name": "Install Root Certificate",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Sysmon creating a registry key in the Root certificate store. While this could be a benign administrative action, it is also a technique used by adversaries to install root certificates for persistence or to manipulate trust. However, without additional context or evidence of malicious intent, this action alone is not conclusive."
+    },
+    "raw_response": "{\n  \"summary\": \"Sysmon process created a registry key in the Root certificate store.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1130\",\n  \"mitre_technique_name\": \"Install Root Certificate\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Sysmon creating a registry key in the Root certificate store. While this could be a benign administrative action, it is also a technique used by adversaries to install root certificates for persistence or to manipulate trust. However, without additional context or evidence of malicious intent, this action alone is not conclusive.\"\n}"
+  },
+  {
+    "id": "gold_003",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Sysmon process created a registry key in the SystemCertificates store",
+      "severity": "low",
+      "mitre_technique_id": "T1130",
+      "mitre_technique_name": "Install Root Certificate",
+      "confidence": 0.75,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Sysmon creating a registry key in the SystemCertificates store. While this could be part of legitimate system operations, it is also a technique used to install root certificates, which can be part of a broader attack. However, without additional context, this is not strongly suspicious."
+    },
+    "raw_response": "{\n  \"summary\": \"Sysmon process created a registry key in the SystemCertificates store\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1130\",\n  \"mitre_technique_name\": \"Install Root Certificate\",\n  \"confidence\": 0.75,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Sysmon creating a registry key in the SystemCertificates store. While this could be part of legitimate system operations, it is also a technique used to install root certificates, which can be part of a broader attack. However, without additional context, this is not strongly suspicious.\"\n}"
+  },
+  {
+    "id": "gold_004",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Sysmon process created a registry key in the HKEY_LOCAL_MACHINE tree",
+      "severity": "low",
+      "mitre_technique_id": "T1130",
+      "mitre_technique_name": "Install Root Certificate",
+      "confidence": 0.75,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Sysmon creating a registry key under HKEY_LOCAL_MACHINE, which is a common location for system-level configuration. While this could be part of legitimate administrative actions, the creation of a certificate store entry (Certificates) in the Root path is suspicious and could indicate an attempt to install a root certificate. However, without more context, it is not conclusive."
+    },
+    "raw_response": "{\n  \"summary\": \"Sysmon process created a registry key in the HKEY_LOCAL_MACHINE tree\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1130\",\n  \"mitre_technique_name\": \"Install Root Certificate\",\n  \"confidence\": 0.75,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Sysmon creating a registry key under HKEY_LOCAL_MACHINE, which is a common location for system-level configuration. While this could be part of legitimate administrative actions, the creation of a certificate store entry (Certificates) in the Root path is suspicious and could indicate an attempt to install a root certificate. However, without more context, it is not conclusive.\"\n}"
+  },
+  {
+    "id": "gold_005",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Sysmon process created a registry key in the EnterpriseCertificates root store",
+      "severity": "low",
+      "mitre_technique_id": "T1130",
+      "mitre_technique_name": "Install Root Certificate",
+      "confidence": 0.75,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Sysmon creating a registry key in the EnterpriseCertificates root store. While this could be part of legitimate enterprise certificate management, the action itself is suspicious as it involves modifying a critical system store. However, without additional context or evidence of malicious intent, this is best treated as a false positive."
+    },
+    "raw_response": "{\n  \"summary\": \"Sysmon process created a registry key in the EnterpriseCertificates root store\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1130\",\n  \"mitre_technique_name\": \"Install Root Certificate\",\n  \"confidence\": 0.75,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Sysmon creating a registry key in the EnterpriseCertificates root store. While this could be part of legitimate enterprise certificate management, the action itself is suspicious as it involves modifying a critical system store. However, without additional context or evidence of malicious intent, this is best treated as a false positive.\"\n}"
+  },
+  {
+    "id": "gold_006",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1086",
+    "ground_truth_technique_name": "PowerShell",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell executed from user's desktop directory",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell being executed from the user's desktop directory. While this is an unusual location for PowerShell execution, it does not necessarily indicate malicious activity. PowerShell is commonly used for administrative tasks and can be executed from any directory. The high integrity level and the command line provided do not suggest any suspicious behavior. Therefore, this event can be considered a false positive."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell executed from user's desktop directory\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell being executed from the user's desktop directory. While this is an unusual location for PowerShell execution, it does not necessarily indicate malicious activity. PowerShell is commonly used for administrative tasks and can be executed from any directory. The high integrity level and the command line provided do not suggest any suspicious behavior. Therefore, this event can be considered a false positive.\"\n}"
+  },
+  {
+    "id": "gold_007",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1033",
+    "ground_truth_technique_name": "System Owner/User Discovery",
+    "valid": true,
+    "prediction": {
+      "summary": "whoami.exe is executed from a user's desktop directory, potentially indicating a benign action.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The whoami.exe command is executed to display the logged-on user information. This is a common and legitimate action performed by users or administrative tools. The command line and process relationships do not indicate any suspicious behavior. The execution from the user's desktop directory is typical and does not imply malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"whoami.exe is executed from a user's desktop directory, potentially indicating a benign action.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The whoami.exe command is executed to display the logged-on user information. This is a common and legitimate action performed by users or administrative tools. The command line and process relationships do not indicate any suspicious behavior. The execution from the user's desktop directory is typical and does not imply malicious intent.\"\n}"
+  },
+  {
+    "id": "gold_008",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1088",
+    "ground_truth_technique_name": "Bypass User Account Control",
+    "valid": true,
+    "prediction": {
+      "summary": "User IEUser launched the Microsoft Management Console (MMC) with the Event Viewer snap-in.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a legitimate use of the Microsoft Management Console (MMC) with the Event Viewer snap-in. This is a common administrative task and does not indicate any suspicious behavior. The process and its parent are both system-related and do not suggest malicious intent. The high integrity level is typical for administrative tasks."
+    },
+    "raw_response": "{\n  \"summary\": \"User IEUser launched the Microsoft Management Console (MMC) with the Event Viewer snap-in.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a legitimate use of the Microsoft Management Console (MMC) with the Event Viewer snap-in. This is a common administrative task and does not indicate any suspicious behavior. The process and its parent are both system-related and do not suggest malicious intent. The high integrity level is typical for administrative tasks.\"\n}"
+  },
+  {
+    "id": "gold_009",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1031",
+    "ground_truth_technique_name": "Modify Existing Service",
+    "valid": true,
+    "prediction": {
+      "summary": "mmc.exe initiated a TCP connection to port 135 on the same host.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows mmc.exe, a legitimate Windows utility, initiating a TCP connection to port 135 (epmap) on the same host. This is a common internal communication and does not indicate malicious activity. The connection is local and no data transfer or external interaction is involved, making it benign."
+    },
+    "raw_response": "{\n  \"summary\": \"mmc.exe initiated a TCP connection to port 135 on the same host.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows mmc.exe, a legitimate Windows utility, initiating a TCP connection to port 135 (epmap) on the same host. This is a common internal communication and does not indicate malicious activity. The connection is local and no data transfer or external interaction is involved, making it benign.\"\n}"
+  },
+  {
+    "id": "gold_010",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a system DLL.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a system DLL, which is a common and legitimate operation. The DLL is part of the Windows Cryptography Manager and is frequently loaded by system processes. There is no evidence of malicious activity, and the process is running with a valid signature."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a system DLL.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a system DLL, which is a common and legitimate operation. The DLL is part of the Windows Cryptography Manager and is frequently loaded by system processes. There is no evidence of malicious activity, and the process is running with a valid signature.\"\n}"
+  },
+  {
+    "id": "gold_011",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a system DLL",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a system DLL (samlib.dll) which is a common and legitimate operation. There are no suspicious indicators such as unusual process behavior, unexpected file paths, or modifications. The DLL is signed and from a trusted source, further reducing the likelihood of malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a system DLL\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a system DLL (samlib.dll) which is a common and legitimate operation. There are no suspicious indicators such as unusual process behavior, unexpected file paths, or modifications. The DLL is signed and from a trusted source, further reducing the likelihood of malicious intent.\"\n}"
+  },
+  {
+    "id": "gold_012",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a system DLL",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a system DLL (hid.dll) which is a common and legitimate operation. There are no suspicious elements in the event, such as unusual process behavior, unexpected file paths, or registry modifications. The DLL is part of the Windows operating system and its loading by PowerShell is a normal system activity."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a system DLL\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a system DLL (hid.dll) which is a common and legitimate operation. There are no suspicious elements in the event, such as unusual process behavior, unexpected file paths, or registry modifications. The DLL is part of the Windows operating system and its loading by PowerShell is a normal system activity.\"\n}"
+  },
+  {
+    "id": "gold_013",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell execution with loaded WinSCard.dll",
+      "severity": "low",
+      "mitre_technique_id": "T1059.003",
+      "mitre_technique_name": "Windows Command Shell",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell execution with the loading of WinSCard.dll, which is a common library for smart card operations. While this could be part of legitimate administrative tasks, the presence of PowerShell execution is a security-relevant action. However, without additional context or suspicious activity, this event is best treated as a benign administrative task."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell execution with loaded WinSCard.dll\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1059.003\",\n  \"mitre_technique_name\": \"Windows Command Shell\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell execution with the loading of WinSCard.dll, which is a common library for smart card operations. While this could be part of legitimate administrative tasks, the presence of PowerShell execution is a security-relevant action. However, without additional context or suspicious activity, this event is best treated as a benign administrative task.\"\n}"
+  },
+  {
+    "id": "gold_014",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process initiated a process creation event with lsass.exe as the target.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell spawning a process (lsass.exe) with read and execute permissions. While this could be suspicious, it is a common operation for administrative tasks. The lsass.exe process is typically involved in security-related activities such as authentication and session management. Without additional context or evidence of malicious intent, this behavior is likely benign."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process initiated a process creation event with lsass.exe as the target.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell spawning a process (lsass.exe) with read and execute permissions. While this could be suspicious, it is a common operation for administrative tasks. The lsass.exe process is typically involved in security-related activities such as authentication and session management. Without additional context or evidence of malicious intent, this behavior is likely benign.\"\n}"
+  },
+  {
+    "id": "gold_015",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a DLL from System32 directory",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a DLL from the System32 directory, which is a common and legitimate operation. The DLL is signed and the process is running with a high integrity level, which is typical for system processes. There is no evidence of malicious activity, and the behavior is consistent with normal system operations."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a DLL from System32 directory\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a DLL from the System32 directory, which is a common and legitimate operation. The DLL is signed and the process is running with a high integrity level, which is typical for system processes. There is no evidence of malicious activity, and the behavior is consistent with normal system operations.\"\n}"
+  },
+  {
+    "id": "gold_016",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1033",
+    "ground_truth_technique_name": "System Owner/User Discovery",
+    "valid": true,
+    "prediction": {
+      "summary": "whoami.exe is executed from a user's desktop directory, potentially indicating a benign action.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The whoami.exe command is executed in a typical user context, displaying the current user's information. The command line does not include any suspicious parameters, and the process is launched from a common directory. The parent process is PowerShell, which is a legitimate system component. There is no evidence of malicious intent or security-relevant behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"whoami.exe is executed from a user's desktop directory, potentially indicating a benign action.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The whoami.exe command is executed in a typical user context, displaying the current user's information. The command line does not include any suspicious parameters, and the process is launched from a common directory. The parent process is PowerShell, which is a legitimate system component. There is no evidence of malicious intent or security-relevant behavior.\"\n}"
+  },
+  {
+    "id": "gold_017",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a system DLL",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a system DLL (cryptdll.dll) which is a legitimate operation for cryptographic functions. There are no suspicious elements in the provided information, and the process is a system process. This activity is common and does not indicate malicious behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a system DLL\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a system DLL (cryptdll.dll) which is a legitimate operation for cryptographic functions. There are no suspicious elements in the provided information, and the process is a system process. This activity is common and does not indicate malicious behavior.\"\n}"
+  },
+  {
+    "id": "gold_018",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loaded a DLL from the system directory",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a DLL from the system directory, which is a common and legitimate operation. The DLL is signed and the process is running with a valid signature. There is no evidence of malicious intent or behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loaded a DLL from the system directory\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a DLL from the system directory, which is a common and legitimate operation. The DLL is signed and the process is running with a valid signature. There is no evidence of malicious intent or behavior.\"\n}"
+  },
+  {
+    "id": "gold_019",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a system DLL",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell executing and loading a system DLL (hid.dll). This is a common and legitimate operation as PowerShell frequently loads system DLLs for various tasks. There is no evidence of malicious intent or behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a system DLL\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell executing and loading a system DLL (hid.dll). This is a common and legitimate operation as PowerShell frequently loads system DLLs for various tasks. There is no evidence of malicious intent or behavior.\"\n}"
+  },
+  {
+    "id": "gold_020",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell execution with loaded WinSCard.dll",
+      "severity": "low",
+      "mitre_technique_id": "T1059.003",
+      "mitre_technique_name": "Windows Command Shell",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell execution with the loading of WinSCard.dll, which is a common library for smart card operations. While this could be part of legitimate administrative tasks, the presence of PowerShell execution is a security-relevant action. However, without additional context or suspicious activity, this event is best treated as a benign administrative task."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell execution with loaded WinSCard.dll\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1059.003\",\n  \"mitre_technique_name\": \"Windows Command Shell\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell execution with the loading of WinSCard.dll, which is a common library for smart card operations. While this could be part of legitimate administrative tasks, the presence of PowerShell execution is a security-relevant action. However, without additional context or suspicious activity, this event is best treated as a benign administrative task.\"\n}"
+  },
+  {
+    "id": "gold_021",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell process loading a DLL from the system directory",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell loading a DLL from the system directory, which is a common and legitimate operation. The DLL is part of the Credential Vault Client Library, which is a known component of Windows. There are no suspicious signs pointing towards malicious activity, such as unusual process behavior, unexpected file paths, or registry modifications. The event can be considered a benign system operation."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell process loading a DLL from the system directory\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell loading a DLL from the system directory, which is a common and legitimate operation. The DLL is part of the Credential Vault Client Library, which is a known component of Windows. There are no suspicious signs pointing towards malicious activity, such as unusual process behavior, unexpected file paths, or registry modifications. The event can be considered a benign system operation.\"\n}"
+  },
+  {
+    "id": "gold_022",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell executing lsass.exe",
+      "severity": "low",
+      "mitre_technique_id": "T1076",
+      "mitre_technique_name": "Remote Desktop Protocol",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows PowerShell executing lsass.exe, which is typically associated with Remote Desktop Protocol (RDP) operations. However, without additional context or evidence of malicious intent, this is likely a legitimate administrative action. The event does not provide enough evidence to confidently identify a specific MITRE ATT&CK technique."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell executing lsass.exe\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1076\",\n  \"mitre_technique_name\": \"Remote Desktop Protocol\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows PowerShell executing lsass.exe, which is typically associated with Remote Desktop Protocol (RDP) operations. However, without additional context or evidence of malicious intent, this is likely a legitimate administrative action. The event does not provide enough evidence to confidently identify a specific MITRE ATT&CK technique.\"\n}"
+  },
+  {
+    "id": "gold_023",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1003",
+    "ground_truth_technique_name": "Credential Dumping",
+    "valid": true,
+    "prediction": {
+      "summary": "Sysmon event logs the loading of wlanapi.dll by svchost.exe, which is a common system process.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event describes the loading of wlanapi.dll by svchost.exe, a common system process. This is a normal system operation and does not indicate any malicious activity. The process and DLL are signed and valid, and there are no suspicious file paths or registry modifications present."
+    },
+    "raw_response": "{\n  \"summary\": \"Sysmon event logs the loading of wlanapi.dll by svchost.exe, which is a common system process.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event describes the loading of wlanapi.dll by svchost.exe, a common system process. This is a normal system operation and does not indicate any malicious activity. The process and DLL are signed and valid, and there are no suspicious file paths or registry modifications present.\"\n}"
+  },
+  {
+    "id": "gold_024",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1187",
+    "ground_truth_technique_name": "Forced Authentication",
+    "valid": true,
+    "prediction": {
+      "summary": "Explorer.exe created a shortcut to a file in the Recent folder.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The creation of a shortcut in the Recent folder is a common user action and does not indicate malicious behavior. The process is Explorer.exe, which is a legitimate system process. There is no evidence of unusual activity or security risk."
+    },
+    "raw_response": "{\n  \"summary\": \"Explorer.exe created a shortcut to a file in the Recent folder.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The creation of a shortcut in the Recent folder is a common user action and does not indicate malicious behavior. The process is Explorer.exe, which is a legitimate system process. There is no evidence of unusual activity or security risk.\"\n}"
+  },
+  {
+    "id": "gold_025",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1187",
+    "ground_truth_technique_name": "Forced Authentication",
+    "valid": true,
+    "prediction": {
+      "summary": "Explorer.exe launched a shortcut to a potentially malicious file in the Recent folder.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that Explorer.exe launched a shortcut to a file in the Recent folder. While this could be suspicious, it is common for users to have shortcuts in their Recent folder. Without additional context or evidence of malicious intent, this event does not strongly indicate malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"Explorer.exe launched a shortcut to a potentially malicious file in the Recent folder.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that Explorer.exe launched a shortcut to a file in the Recent folder. While this could be suspicious, it is common for users to have shortcuts in their Recent folder. Without additional context or evidence of malicious intent, this event does not strongly indicate malicious activity.\"\n}"
+  },
+  {
+    "id": "gold_026",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1112",
+    "ground_truth_technique_name": "Modify Registry",
+    "valid": true,
+    "prediction": {
+      "summary": "Administrator modified the registry to disable User Account Control (UAC) globally.",
+      "severity": "medium",
+      "mitre_technique_id": "T1086",
+      "mitre_technique_name": "Bypass User Account Control",
+      "confidence": 0.95,
+      "recommended_action": "escalate_to_L2",
+      "reasoning": "The event shows the Administrator modified the registry to disable User Account Control (UAC) globally. This is a suspicious action as it can bypass security mechanisms and potentially allow for more privilege escalation. The use of reg.exe to modify the registry directly is a common technique used in privilege escalation attacks. While this could be a legitimate administrative action, the global nature of the change and the use of reg.exe make it suspicious. Therefore, further investigation is warranted."
+    },
+    "raw_response": "{\n  \"summary\": \"Administrator modified the registry to disable User Account Control (UAC) globally.\",\n  \"severity\": \"medium\",\n  \"mitre_technique_id\": \"T1086\",\n  \"mitre_technique_name\": \"Bypass User Account Control\",\n  \"confidence\": 0.95,\n  \"recommended_action\": \"escalate_to_L2\",\n  \"reasoning\": \"The event shows the Administrator modified the registry to disable User Account Control (UAC) globally. This is a suspicious action as it can bypass security mechanisms and potentially allow for more privilege escalation. The use of reg.exe to modify the registry directly is a common technique used in privilege escalation attacks. While this could be a legitimate administrative action, the global nature of the change and the use of reg.exe make it suspicious. Therefore, further investigation is warranted.\"\n}"
+  },
+  {
+    "id": "gold_027",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1088",
+    "ground_truth_technique_name": "Bypass User Account Control",
+    "valid": false,
+    "prediction": null,
+    "raw_response": "{\n  \"summary\": \"Registry key creation event for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\policies\\system\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1112\",\n  \"mitre_technique_name\": \"Modify Registry\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a registry key being created under a system path. While this can be legitimate for administrative purposes, the specific path suggests potential policy modification. However, without additional context or suspicious activity, this is likely benign.\"\n}"
+  },
+  {
+    "id": "gold_028",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1088",
+    "ground_truth_technique_name": "Bypass User Account Control",
+    "valid": true,
+    "prediction": {
+      "summary": "Registry key 'EnableLUA' was modified to disable User Account Control (UAC) globally.",
+      "severity": "medium",
+      "mitre_technique_id": "T1086",
+      "mitre_technique_name": "Bypass User Account Control",
+      "confidence": 0.95,
+      "recommended_action": "escalate_to_L2",
+      "reasoning": "The event shows that the 'EnableLUA' registry key was modified to set the value to 0, effectively disabling User Account Control (UAC) globally. This is a known technique used to bypass UAC, which is a security feature designed to prevent unauthorized changes to the system. The modification of this key could be part of an attack to gain elevated privileges or to facilitate other malicious activities. The use of 'reg.exe' to modify the registry is a common method for such actions."
+    },
+    "raw_response": "{\n  \"summary\": \"Registry key 'EnableLUA' was modified to disable User Account Control (UAC) globally.\",\n  \"severity\": \"medium\",\n  \"mitre_technique_id\": \"T1086\",\n  \"mitre_technique_name\": \"Bypass User Account Control\",\n  \"confidence\": 0.95,\n  \"recommended_action\": \"escalate_to_L2\",\n  \"reasoning\": \"The event shows that the 'EnableLUA' registry key was modified to set the value to 0, effectively disabling User Account Control (UAC) globally. This is a known technique used to bypass UAC, which is a security feature designed to prevent unauthorized changes to the system. The modification of this key could be part of an attack to gain elevated privileges or to facilitate other malicious activities. The use of 'reg.exe' to modify the registry is a common method for such actions.\"\n}"
+  },
+  {
+    "id": "gold_029",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1158",
+    "ground_truth_technique_name": "Hidden Files and DirectoriesHidden Files and Directories",
+    "valid": true,
+    "prediction": {
+      "summary": "attrib.exe with elevated privileges hides nbtscan.exe",
+      "severity": "medium",
+      "mitre_technique_id": "T1076",
+      "mitre_technique_name": "Remote Desktop Protocol",
+      "confidence": 0.85,
+      "recommended_action": "escalate_to_L2",
+      "reasoning": "The event shows that attrib.exe, running with high integrity level, is used to hide nbtscan.exe by setting its hidden attribute. This behavior is suspicious as it could be an attempt to conceal malicious activity. The use of attrib.exe, a legitimate system utility, to perform this action is consistent with T1076 - Remote Desktop Protocol, which involves hiding or obscuring files to maintain persistence or avoid detection. Given the elevated privileges, this activity warrants further investigation."
+    },
+    "raw_response": "{\n  \"summary\": \"attrib.exe with elevated privileges hides nbtscan.exe\",\n  \"severity\": \"medium\",\n  \"mitre_technique_id\": \"T1076\",\n  \"mitre_technique_name\": \"Remote Desktop Protocol\",\n  \"confidence\": 0.85,\n  \"recommended_action\": \"escalate_to_L2\",\n  \"reasoning\": \"The event shows that attrib.exe, running with high integrity level, is used to hide nbtscan.exe by setting its hidden attribute. This behavior is suspicious as it could be an attempt to conceal malicious activity. The use of attrib.exe, a legitimate system utility, to perform this action is consistent with T1076 - Remote Desktop Protocol, which involves hiding or obscuring files to maintain persistence or avoid detection. Given the elevated privileges, this activity warrants further investigation.\"\n}"
+  },
+  {
+    "id": "gold_030",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1076",
+    "ground_truth_technique_name": "Remote Desktop Protocol",
+    "valid": true,
+    "prediction": {
+      "summary": "LogonUI.exe created a registry key in the HKLM hive under the Terminal Services policy path.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The creation of a registry key by LogonUI.exe, which is a legitimate system process, under the Terminal Services policy path is a common administrative action. There is no evidence to suggest this is malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"LogonUI.exe created a registry key in the HKLM hive under the Terminal Services policy path.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The creation of a registry key by LogonUI.exe, which is a legitimate system process, under the Terminal Services policy path is a common administrative action. There is no evidence to suggest this is malicious activity.\"\n}"
+  },
+  {
+    "id": "gold_031",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1015",
+    "ground_truth_technique_name": "Accessibility Features",
+    "valid": true,
+    "prediction": {
+      "summary": "System process osk.exe (on-screen keyboard) executed with SYSTEM privileges.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The execution of osk.exe by the SYSTEM account is a normal behavior as it is a system process. The command line is empty, and there is no evidence of unusual activity or malicious intent. The process is launched from a legitimate path and has a known description and version. The parent process is also a legitimate system utility (Utilman.exe) with a debug flag, which is consistent with administrative actions."
+    },
+    "raw_response": "{\n  \"summary\": \"System process osk.exe (on-screen keyboard) executed with SYSTEM privileges.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The execution of osk.exe by the SYSTEM account is a normal behavior as it is a system process. The command line is empty, and there is no evidence of unusual activity or malicious intent. The process is launched from a legitimate path and has a known description and version. The parent process is also a legitimate system utility (Utilman.exe) with a debug flag, which is consistent with administrative actions.\"\n}"
+  },
+  {
+    "id": "gold_032",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1033",
+    "ground_truth_technique_name": "System Owner/User Discovery",
+    "valid": true,
+    "prediction": {
+      "summary": "The SYSTEM process executed whoami.exe, which is a benign command-line utility.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.95,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The whoami command is a legitimate utility used to display logged-on user information. It is executed by the SYSTEM process, which is common for administrative tasks. The parent process is osk.exe (on-screen keyboard), which is a standard Windows application. There are no suspicious file paths, registry modifications, or other indicators of malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"The SYSTEM process executed whoami.exe, which is a benign command-line utility.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.95,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The whoami command is a legitimate utility used to display logged-on user information. It is executed by the SYSTEM process, which is common for administrative tasks. The parent process is osk.exe (on-screen keyboard), which is a standard Windows application. There are no suspicious file paths, registry modifications, or other indicators of malicious activity.\"\n}"
+  },
+  {
+    "id": "gold_033",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1059.001",
+    "ground_truth_technique_name": "PowerShell",
+    "valid": true,
+    "prediction": {
+      "summary": "Akagi64.exe, a pentesting utility, was executed from a user's source repository directory.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Akagi64.exe, a known pentesting utility, being executed from a user's source repository. While this could be suspicious, the utility is not being used in a manner that strongly suggests malicious intent. The execution is initiated by PowerShell, a common tool for legitimate administrative tasks. The user context and the lack of any unusual activity or persistence mechanisms make this event more likely benign."
+    },
+    "raw_response": "{\n  \"summary\": \"Akagi64.exe, a pentesting utility, was executed from a user's source repository directory.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Akagi64.exe, a known pentesting utility, being executed from a user's source repository. While this could be suspicious, the utility is not being used in a manner that strongly suggests malicious intent. The execution is initiated by PowerShell, a common tool for legitimate administrative tasks. The user context and the lack of any unusual activity or persistence mechanisms make this event more likely benign.\"\n}"
+  },
+  {
+    "id": "gold_034",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Consent.exe created a registry key in the user's certificate store.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common and benign operation typically performed during normal user interactions or system configurations. There is no evidence suggesting malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"Consent.exe created a registry key in the user's certificate store.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common and benign operation typically performed during normal user interactions or system configurations. There is no evidence suggesting malicious intent.\"\n}"
+  },
+  {
+    "id": "gold_035",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Event logs a registry key creation under the SystemCertificates path, which could be related to certificate management or persistence.",
+      "severity": "low",
+      "mitre_technique_id": "T1130",
+      "mitre_technique_name": "Install Root Certificate",
+      "confidence": 0.75,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a registry key creation under the SystemCertificates path, which is typically used for managing root certificates. While this could be part of legitimate certificate management, the specific path and the executable involved (IEInstal.exe) might warrant further investigation to confirm its legitimacy. No clear malicious intent is evident from the provided information."
+    },
+    "raw_response": "{\n  \"summary\": \"Event logs a registry key creation under the SystemCertificates path, which could be related to certificate management or persistence.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"T1130\",\n  \"mitre_technique_name\": \"Install Root Certificate\",\n  \"confidence\": 0.75,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a registry key creation under the SystemCertificates path, which is typically used for managing root certificates. While this could be part of legitimate certificate management, the specific path and the executable involved (IEInstal.exe) might warrant further investigation to confirm its legitimacy. No clear malicious intent is evident from the provided information.\"\n}"
+  },
+  {
+    "id": "gold_036",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Internet Explorer process created a registry key in the SystemCertificates store",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Internet Explorer creating a registry key in the SystemCertificates store. While this is an unusual action for Internet Explorer, it is not inherently malicious. The SystemCertificates store is used for storing root certificates, and its modification could be part of legitimate administrative tasks or software installation. Without additional context, this behavior cannot be confidently classified as malicious."
+    },
+    "raw_response": "{\n  \"summary\": \"Internet Explorer process created a registry key in the SystemCertificates store\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Internet Explorer creating a registry key in the SystemCertificates store. While this is an unusual action for Internet Explorer, it is not inherently malicious. The SystemCertificates store is used for storing root certificates, and its modification could be part of legitimate administrative tasks or software installation. Without additional context, this behavior cannot be confidently classified as malicious.\"\n}"
+  },
+  {
+    "id": "gold_037",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Event logs a registry key creation under a system process related to Internet Explorer.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a registry key creation under a system process related to Internet Explorer. While registry modifications can be suspicious, the process is commonly associated with system operations and the specific path does not indicate a known malicious activity. The event lacks additional context that would suggest malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"Event logs a registry key creation under a system process related to Internet Explorer.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a registry key creation under a system process related to Internet Explorer. While registry modifications can be suspicious, the process is commonly associated with system operations and the specific path does not indicate a known malicious activity. The event lacks additional context that would suggest malicious intent.\"\n}"
+  },
+  {
+    "id": "gold_038",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Consent.exe created a registry key in the user's certificate store.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common operation and does not indicate malicious activity. The process is running with standard user privileges, and the registry path is a typical location for certificate management."
+    },
+    "raw_response": "{\n  \"summary\": \"Consent.exe created a registry key in the user's certificate store.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common operation and does not indicate malicious activity. The process is running with standard user privileges, and the registry path is a typical location for certificate management.\"\n}"
+  },
+  {
+    "id": "gold_039",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Consent.exe created a registry key in the user's certificate store.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common and benign operation typically performed during normal system operations or user authentication processes. There is no evidence suggesting malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"Consent.exe created a registry key in the user's certificate store.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that consent.exe, a legitimate Windows process, created a registry key in the user's certificate store. This is a common and benign operation typically performed during normal system operations or user authentication processes. There is no evidence suggesting malicious intent.\"\n}"
+  },
+  {
+    "id": "gold_040",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1036",
+    "ground_truth_technique_name": "Masquerading",
+    "valid": true,
+    "prediction": {
+      "summary": "consent.exe from a temporary directory executed by Internet Explorer",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that consent.exe, which is a temporary file, was executed from the user's local temporary directory. The parent process is Internet Explorer, which is a common application. The file hashes do not indicate any known malicious signatures. While the file is located in a temporary directory, this is a common practice for legitimate applications. There is no evidence of credential dumping, persistence, or other suspicious activities."
+    },
+    "raw_response": "{\n  \"summary\": \"consent.exe from a temporary directory executed by Internet Explorer\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that consent.exe, which is a temporary file, was executed from the user's local temporary directory. The parent process is Internet Explorer, which is a common application. The file hashes do not indicate any known malicious signatures. While the file is located in a temporary directory, this is a common practice for legitimate applications. There is no evidence of credential dumping, persistence, or other suspicious activities.\"\n}"
+  },
+  {
+    "id": "gold_041",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1073",
+    "ground_truth_technique_name": "DLL Side-Loading",
+    "valid": true,
+    "prediction": {
+      "summary": "Consent.exe process loaded a suspicious DLL from a temporary directory.",
+      "severity": "medium",
+      "mitre_technique_id": "T1076",
+      "mitre_technique_name": "Remote Desktop Protocol",
+      "confidence": 0.85,
+      "recommended_action": "escalate_to_L2",
+      "reasoning": "The event shows that consent.exe, likely a legitimate system process, loaded a DLL (Fubuki.dll) from a temporary directory. This behavior is suspicious as it could indicate an attempt to bypass security measures or execute malicious code. The use of a temporary directory for loading a DLL is a common technique used in Remote Desktop Protocol (RDP) attacks to evade detection. Given the lack of a valid digital signature and the suspicious nature of the file, this event warrants further investigation."
+    },
+    "raw_response": "{\n  \"summary\": \"Consent.exe process loaded a suspicious DLL from a temporary directory.\",\n  \"severity\": \"medium\",\n  \"mitre_technique_id\": \"T1076\",\n  \"mitre_technique_name\": \"Remote Desktop Protocol\",\n  \"confidence\": 0.85,\n  \"recommended_action\": \"escalate_to_L2\",\n  \"reasoning\": \"The event shows that consent.exe, likely a legitimate system process, loaded a DLL (Fubuki.dll) from a temporary directory. This behavior is suspicious as it could indicate an attempt to bypass security measures or execute malicious code. The use of a temporary directory for loading a DLL is a common technique used in Remote Desktop Protocol (RDP) attacks to evade detection. Given the lack of a valid digital signature and the suspicious nature of the file, this event warrants further investigation.\"\n}"
+  },
+  {
+    "id": "gold_042",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1059.003",
+    "ground_truth_technique_name": "Windows Command Shell",
+    "valid": true,
+    "prediction": {
+      "summary": "Command prompt executed from a temporary file with high integrity level.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a command prompt (cmd.exe) being executed from a temporary file. While this is unusual, the process has a high integrity level, and the command line is not provided, which makes it difficult to determine if this is malicious. The temporary file nature of the parent process (consent.exe) could indicate a benign context, such as a user running a temporary script or tool. Without more context or evidence of malicious intent, this event should be treated as a false positive."
+    },
+    "raw_response": "{\n  \"summary\": \"Command prompt executed from a temporary file with high integrity level.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a command prompt (cmd.exe) being executed from a temporary file. While this is unusual, the process has a high integrity level, and the command line is not provided, which makes it difficult to determine if this is malicious. The temporary file nature of the parent process (consent.exe) could indicate a benign context, such as a user running a temporary script or tool. Without more context or evidence of malicious intent, this event should be treated as a false positive.\"\n}"
+  },
+  {
+    "id": "gold_043",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1036",
+    "ground_truth_technique_name": "Masquerading",
+    "valid": true,
+    "prediction": {
+      "summary": "consent.exe from a temporary directory executed cmd.exe with full access",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows consent.exe, likely a benign application, executing cmd.exe with full access. The execution of cmd.exe from a temporary directory is suspicious, but without further context, it is not clear if this is malicious or part of a legitimate process. The full access granted suggests potential privilege escalation risks, but the source process is not a high-integrity system process, and the target process is a common system utility. Given the lack of additional context, this event is best treated as a false positive."
+    },
+    "raw_response": "{\n  \"summary\": \"consent.exe from a temporary directory executed cmd.exe with full access\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows consent.exe, likely a benign application, executing cmd.exe with full access. The execution of cmd.exe from a temporary directory is suspicious, but without further context, it is not clear if this is malicious or part of a legitimate process. The full access granted suggests potential privilege escalation risks, but the source process is not a high-integrity system process, and the target process is a common system utility. Given the lack of additional context, this event is best treated as a false positive.\"\n}"
+  },
+  {
+    "id": "gold_044",
+    "ground_truth_malicious": true,
+    "ground_truth_technique": "T1130",
+    "ground_truth_technique_name": "Install Root Certificate",
+    "valid": true,
+    "prediction": {
+      "summary": "Consent.exe created a registry key in the user's certificate store.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The creation of a registry key in the certificate store by consent.exe is a common and legitimate operation. The process is running with the user's context and the path is standard for certificate management. There is no evidence of malicious intent or unusual behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"Consent.exe created a registry key in the user's certificate store.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The creation of a registry key in the certificate store by consent.exe is a common and legitimate operation. The process is running with the user's context and the path is standard for certificate management. There is no evidence of malicious intent or unusual behavior.\"\n}"
+  },
+  {
+    "id": "benign_001",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Word application launched to open a document by a user with medium integrity level.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a legitimate use of Word to open a document. There are no suspicious elements such as unusual process relationships, command-line arguments, or elevated privileges. The action is consistent with normal user behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"Word application launched to open a document by a user with medium integrity level.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a legitimate use of Word to open a document. There are no suspicious elements such as unusual process relationships, command-line arguments, or elevated privileges. The action is consistent with normal user behavior.\"\n}"
+  },
+  {
+    "id": "benign_002",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Chrome process launched by a user with medium integrity level.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a legitimate process (Google Chrome) being launched by a user with a medium integrity level through the Explorer shell. There are no suspicious elements in the command line or process relationships that would indicate malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"Chrome process launched by a user with medium integrity level.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a legitimate process (Google Chrome) being launched by a user with a medium integrity level through the Explorer shell. There are no suspicious elements in the command line or process relationships that would indicate malicious activity.\"\n}"
+  },
+  {
+    "id": "benign_003",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "User mrobinson logged in to WKSTN-005 from IP address 10.20.14.33 using Negotiate authentication.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event describes a standard user login using Negotiate authentication, which is a common method for secure authentication over a network. There is no evidence of suspicious activity or deviation from normal user behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"User mrobinson logged in to WKSTN-005 from IP address 10.20.14.33 using Negotiate authentication.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event describes a standard user login using Negotiate authentication, which is a common method for secure authentication over a network. There is no evidence of suspicious activity or deviation from normal user behavior.\"\n}"
+  },
+  {
+    "id": "benign_004",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "backgroundTaskHost.exe launched by svchost.exe with DcomLaunch parameters",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows backgroundTaskHost.exe being launched by svchost.exe, which is a common process for hosting background tasks in Windows. The command line parameters are typical for DCOM service activation. There is no evidence of malicious activity, and the process is running with medium integrity level, which is expected for background tasks. This behavior is consistent with normal system operations."
+    },
+    "raw_response": "{\n  \"summary\": \"backgroundTaskHost.exe launched by svchost.exe with DcomLaunch parameters\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows backgroundTaskHost.exe being launched by svchost.exe, which is a common process for hosting background tasks in Windows. The command line parameters are typical for DCOM service activation. There is no evidence of malicious activity, and the process is running with medium integrity level, which is expected for background tasks. This behavior is consistent with normal system operations.\"\n}"
+  },
+  {
+    "id": "benign_005",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "VeeamAgent.exe running a backup job as SYSTEM user.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows VeeamAgent.exe running a backup job as the SYSTEM user, which is a common and expected behavior for backup operations. The SYSTEM user has high privileges, but this is necessary for the agent to perform its tasks. There is no evidence of malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"VeeamAgent.exe running a backup job as SYSTEM user.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows VeeamAgent.exe running a backup job as the SYSTEM user, which is a common and expected behavior for backup operations. The SYSTEM user has high privileges, but this is necessary for the agent to perform its tasks. There is no evidence of malicious activity.\"\n}"
+  },
+  {
+    "id": "benign_006",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Teams.exe initiated a network connection to an external IP address on port 443.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows normal network activity initiated by Microsoft Teams. The connection to an external IP address on port 443 is typical for communication with Microsoft\u2019s servers for updates, meetings, or other services. There is no evidence of malicious intent or security-relevant behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"Teams.exe initiated a network connection to an external IP address on port 443.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows normal network activity initiated by Microsoft Teams. The connection to an external IP address on port 443 is typical for communication with Microsoft\u2019s servers for updates, meetings, or other services. There is no evidence of malicious intent or security-relevant behavior.\"\n}"
+  },
+  {
+    "id": "benign_007",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Command Prompt executed to list files on a user's desktop.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a standard command prompt execution to list files on a user's desktop. This activity is common and does not indicate malicious intent. The process is initiated by a user with normal privileges, and there are no suspicious file paths or registry modifications involved."
+    },
+    "raw_response": "{\n  \"summary\": \"Command Prompt executed to list files on a user's desktop.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a standard command prompt execution to list files on a user's desktop. This activity is common and does not indicate malicious intent. The process is initiated by a user with normal privileges, and there are no suspicious file paths or registry modifications involved.\"\n}"
+  },
+  {
+    "id": "benign_008",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "PowerShell script execution by a monitoring service account.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows a scheduled task or service (taskeng.exe) executing a PowerShell script (Check-DiskSpace.ps1) under a monitoring service account. This is a common and legitimate use of PowerShell for administrative tasks. There is no evidence of malicious intent or unusual behavior."
+    },
+    "raw_response": "{\n  \"summary\": \"PowerShell script execution by a monitoring service account.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows a scheduled task or service (taskeng.exe) executing a PowerShell script (Check-DiskSpace.ps1) under a monitoring service account. This is a common and legitimate use of PowerShell for administrative tasks. There is no evidence of malicious intent or unusual behavior.\"\n}"
+  },
+  {
+    "id": "benign_009",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Excel process accessed a user document.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows Excel accessing a user document. This is a common and expected behavior for users working with spreadsheets. There is no evidence of malicious intent or suspicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"Excel process accessed a user document.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows Excel accessing a user document. This is a common and expected behavior for users working with spreadsheets. There is no evidence of malicious intent or suspicious activity.\"\n}"
+  },
+  {
+    "id": "benign_010",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "User rortiz from domain CORP successfully logged in using Negotiate authentication package.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event describes a successful login attempt, which is a common and expected activity. The use of the Negotiate authentication package is standard for secure authentication. There is no evidence of suspicious behavior or malicious intent."
+    },
+    "raw_response": "{\n  \"summary\": \"User rortiz from domain CORP successfully logged in using Negotiate authentication package.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event describes a successful login attempt, which is a common and expected activity. The use of the Negotiate authentication package is standard for secure authentication. There is no evidence of suspicious behavior or malicious intent.\"\n}"
+  },
+  {
+    "id": "benign_011",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "Zoom application launched with a URL parameter.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The event shows that the Zoom application was launched with a URL parameter. This is a common and legitimate use of the application to join a meeting. There is no evidence of malicious activity, and the process and user context are typical for such a scenario."
+    },
+    "raw_response": "{\n  \"summary\": \"Zoom application launched with a URL parameter.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The event shows that the Zoom application was launched with a URL parameter. This is a common and legitimate use of the application to join a meeting. There is no evidence of malicious activity, and the process and user context are typical for such a scenario.\"\n}"
+  },
+  {
+    "id": "benign_012",
+    "ground_truth_malicious": false,
+    "ground_truth_technique": "NONE",
+    "ground_truth_technique_name": "NONE",
+    "valid": true,
+    "prediction": {
+      "summary": "svchost.exe initiated a network connection to update.microsoft.com on port 443.",
+      "severity": "low",
+      "mitre_technique_id": "NONE",
+      "mitre_technique_name": "NONE",
+      "confidence": 0.9,
+      "recommended_action": "close_false_positive",
+      "reasoning": "The svchost.exe process, running under the NETWORK SERVICE account, initiated a TCP connection to a known Microsoft update server. This is a common and expected behavior for maintaining system updates and is not indicative of malicious activity."
+    },
+    "raw_response": "{\n  \"summary\": \"svchost.exe initiated a network connection to update.microsoft.com on port 443.\",\n  \"severity\": \"low\",\n  \"mitre_technique_id\": \"NONE\",\n  \"mitre_technique_name\": \"NONE\",\n  \"confidence\": 0.90,\n  \"recommended_action\": \"close_false_positive\",\n  \"reasoning\": \"The svchost.exe process, running under the NETWORK SERVICE account, initiated a TCP connection to a known Microsoft update server. This is a common and expected behavior for maintaining system updates and is not indicative of malicious activity.\"\n}"
+  }
+]
